@@ -77,15 +77,15 @@ h1 {
   width: 100%;
 }
 
-/* hotel previews / list */
-.hotel-list {
+/* airbnb previews / list */
+.airbnb-list {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 }
-.hotel-preview {
+.airbnb-preview {
   padding: 0px;
   width: 60%;
   margin: 0 auto;
@@ -96,10 +96,10 @@ h1 {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-.hotel-preview:hover {
+.airbnb-preview:hover {
   border: 2px solid rgb(77, 77, 77);
 }
-.hotel-preview h2 {
+.airbnb-preview h2 {
   font-size: 20px;
   color: white;
   margin: 0px;
@@ -202,7 +202,7 @@ hr {
   font-size: 15px;
 }
 
-.no-hotels {
+.no-airbnbs {
   padding: 10px;
 }
 
@@ -245,7 +245,7 @@ hr {
   .navbar h1 {
     font-size: 20px;
   }
-  .hotel-preview {
+  .airbnb-preview {
     width: 90%;
     margin: 20px 0;
     border-bottom: 1px solid #fafafa;
@@ -257,7 +257,7 @@ hr {
 }
 
 /* CREATE PAGE */
-/* create new hotel form */
+/* create new airbnb form */
 .create {
   max-width: 400px;
   margin: 0 auto;
@@ -291,12 +291,12 @@ hr {
   cursor: pointer;
 }
 
-.hotel-details {
+.airbnb-details {
   display: grid;
   place-items: center;
   margin-top: 20px;
 }
-.hotel-details button {
+.airbnb-details button {
   background: rgb(77, 77, 77);
   color: #fff;
   border: 0;
