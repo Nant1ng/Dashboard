@@ -22,7 +22,6 @@ function HomePage() {
     []
   );
 
-  console.log(airbnbs);
   return (
     <div className="card">
       <h2 className="title">All Airbnbs</h2>

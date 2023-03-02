@@ -4,9 +4,10 @@ import { NewAirbnbType } from "../types/airbnb";
 
 interface IProps {
   data: NewAirbnbType;
+  detailsPage?: boolean;
 }
 
-function Information({ data }: IProps) {
+function Information({ data, detailsPage }: IProps) {
   const {
     title,
     description,
