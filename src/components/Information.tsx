@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NewAirbnbType } from "../types/airbnb";
+import Edit from "./Edit";
 
 interface IProps {
   data: NewAirbnbType;
@@ -56,7 +57,9 @@ function Information({ data, detailsPage }: IProps) {
               >
                 Edit Description
               </strong>
-              {editDescription ? <p>Edit Me</p> : null}
+              {editDescription ? (
+                <Edit editDescription={editDescription} setEditDescription={setEditDescription} />
+              ) : null}
             </p>
             <button>Delete Airbnb</button>
           </>
