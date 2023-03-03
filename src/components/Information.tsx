@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { NewAirbnbType } from "../types/airbnb";
 
@@ -22,6 +22,8 @@ function Information({ data, detailsPage }: IProps) {
     id,
   } = data;
 
+  const [editDescription, setEditDescription] = useState(false);
+
   return (
     <div className="airbnb-preview">
       <div className="image-container">
@@ -44,9 +46,25 @@ function Information({ data, detailsPage }: IProps) {
         </span>
         <hr />
         <span className="feature">Main Feature: {feature}</span>
-        <Link to={`/airbnbs/${id}`}>
-          <button className="moreinfo-btn">View More Information</button>
-        </Link>
+        {detailsPage ? (
+          <>
+            <p className="description-tsxt">
+              {description}
+              <strong
+                className="edit-text"
+                onClick={() => setEditDescription(!editDescription)}
+              >
+                Edit Description
+              </strong>
+              {editDescription ? <p>Edit Me</p> : null}
+            </p>
+            <button>Delete Airbnb</button>
+          </>
+        ) : (
+          <Link to={`/airbnbs/${id}`}>
+            <button className="moreinfo-btn">View More Information</button>
+          </Link>
+        )}
       </div>
     </div>
   );
