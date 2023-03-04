@@ -50,7 +50,7 @@ function Information({ data, detailsPage }: IProps) {
         {detailsPage ? (
           <>
             <p className="description-tsxt">
-              {description}
+              {description}{" "}
               <strong
                 className="edit-text"
                 onClick={() => setEditDescription(!editDescription)}
@@ -58,7 +58,10 @@ function Information({ data, detailsPage }: IProps) {
                 Edit Description
               </strong>
               {editDescription ? (
-                <Edit editDescription={editDescription} setEditDescription={setEditDescription} />
+                <Edit
+                  editDescription={editDescription}
+                  setEditDescription={setEditDescription}
+                />
               ) : null}
             </p>
             <button>Delete Airbnb</button>
