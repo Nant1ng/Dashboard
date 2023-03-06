@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { addAirbnb } from "../lib/controller";
 
 function Create() {
   const [title, setTitle] = useState("");
@@ -12,8 +14,23 @@ function Create() {
   const [totalPrice, setTotalPrice] = useState("");
   const [perNight, setPerNight] = useState("");
 
+  const navigate = useNavigate();
+
   const addNewAirbnb = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    addAirbnb({
+      title,
+      description,
+      feature,
+      location,
+      stars,
+      country,
+      region,
+      review,
+      totalPrice,
+      perNight,
+    });
+    navigate("/");
   };
 
   return (
