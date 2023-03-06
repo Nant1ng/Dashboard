@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { deleteAirbnb } from "../lib/controller";
 import { NewAirbnbType } from "../types/airbnb";
 import Edit from "./Edit";
 
@@ -24,6 +25,8 @@ function Information({ data, detailsPage }: IProps) {
   } = data;
 
   const [editDescription, setEditDescription] = useState(false);
+
+  const navigate = useNavigate()
 
   return (
     <div className="airbnb-preview">
@@ -64,7 +67,7 @@ function Information({ data, detailsPage }: IProps) {
                 />
               ) : null}
             </p>
-            <button>Delete Airbnb</button>
+            <button onClick={() => deleteAirbnb(id, navigate)}>Delete Airbnb</button>
           </>
         ) : (
           <Link to={`/airbnbs/${id}`}>
