@@ -1,14 +1,17 @@
 import { useState } from "react";
+import { editAirbnb } from "../lib/controller";
 
 interface IProps {
   editDescription: boolean;
   setEditDescription: React.Dispatch<React.SetStateAction<boolean>>;
+  id?: string
 }
 
-function Edit({ editDescription, setEditDescription }: IProps) {
+function Edit({ editDescription, setEditDescription, id }: IProps) {
   const [newDescription, setNewDescription] = useState("");
 
   const handleUpdate = () => {
+    editAirbnb(id, {description: newDescription})
     setEditDescription(!editDescription);
   };
 

@@ -64,6 +64,7 @@ function Information({ data, detailsPage }: IProps) {
                 <Edit
                   editDescription={editDescription}
                   setEditDescription={setEditDescription}
+                  id={id}
                 />
               ) : null}
             </p>
